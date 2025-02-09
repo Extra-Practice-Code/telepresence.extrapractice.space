@@ -161,6 +161,7 @@ ul {
     right: 1rem;
     display: flex;
     justify-content: end;
+    z-index: 4;
 }
 
 .blurry-box {
