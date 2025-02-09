@@ -1,96 +1,609 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Telepresence</title>
-    <link rel="shortcut icon" href="favicon.png" />
-    <link rel="stylesheet" href="style.css">
-    <style>
-        table {
-            width: 50%;
-            border-collapse: collapse;
-            margin: 20px;
-        }
-
-        th,
-        td {
-            border: 1px solid #000;
-            text-align: center;
-            padding: 8px;
-        }
-
-        th {
-            COLOR: BLACK;
-            background-color: #f2f2f2;
-        }
-
-        img {
-            border: 1px solid white;
-            margin: 10px;
-        }
-    </style>
 </head>
-
 <body>
-    <header>
-        <h1>telepresence</h1>
+    <main class="main">
+        <header class="header">
+            <div class="header__top blurry-box">
+                <h1>
+                    <a href="#top">
+                        Telepresence
+                    </a>
+                </h1>
+                <div class="header__container">
+                    <a id="menu-toggle" class="menu-toggle">
+                      <span class="menu-toggle-bar menu-toggle-bar--top"></span>
+                      <span class="menu-toggle-bar menu-toggle-bar--middle"></span>
+                      <span class="menu-toggle-bar menu-toggle-bar--bottom"></span>
+                    </a>
+                </div>
+            </div>
+            <nav id="menu" class="nav blurry-box">
+                <ul class="nav__list">
+                    <li>
+                        <label class="switch" id="toggleMode">
+                            <input type="checkbox">
+                            <span class="slider">
+                                <span class="slider__light">&#x23FD;</span>
+                                <span class="slider__dark">&#x2B58;</span>
+                            </span>
+                        </label>
+                    </li>
+                    <li>
+                        <a href="#devices">
+                            Devices
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#process">
+                            Process
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#reflections">
+                            Reflections
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#plans">
+                            Plans
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <section class="section">
+                <p>
+                    A project by two studios in different cities who wanted to feel closer.
+                </p>
+                <div class="studios">
+                    <div class="studio">
+                        <a href="https://www.swsws69.nl/" target="_blank">SWSWS69 in Arnhem</a>
+                    </div>
+                    <div class="studio">
+                        <a href="https://extrapractice.space/" target="_blank">Extra Practice in Rotterdam</a>
+                    </div>
+                </div>
+                <p>
+                    Both studios stemmed from a desire to share resources and company in a cultural field that asks you to work for yourself as a freelancer.
+                </p>
+                <p>
+                    Can we extend this sense of solidarity beyond our studio walls, towards similar spaces that pop up everywhere? 
+                </p>
+            </section>
+            <section class="section" id="devices">
+                <h2>
+                    Devices
+                </h2>
 
-
-        <p>the devices, the process, and the lessons</p>
-
-    </header>
-
-
-
-
-    <main>
-
-
-
-        <img src="tp2.png" alt="" width="200px">
-        <img src="tp1.png" alt="" width="200px">
-        <img src="tp3.png" alt="" width="200px">
-        <img src="tp4.png" alt="" width="200px">
-
-        <table>
-            <thead>
-                <tr>
-                    <th>XP</th>
-                    <th>SWSWS69</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Lunch!</td>
-                    <td>Lunch!</td>
-                </tr>
-                <tr>
-                    <td>Coaster</td>
-                    <td>RGB Light</td>
-                </tr>
-                <tr>
-                    <td>Github activity</td>
-                    <td>Flag turn</td>
-                </tr>
-                <tr>
-                    <td>LED</td>
-                    <td>Coffee level</td>
-                </tr>
-                <tr>
-                    <td>Audio</td>
-                    <td>Radio soundscape</td>
-                </tr>
-                <tr>
-                    <td>Library webcam</td>
-                    <td>Book on screen</td>
-                </tr>
-
-
-            </tbody>
-        </table>
-
+                <ul class="devices__list">
+                    <li class="devices__item">
+                        <article>
+                            <h3>
+                                lunch box
+                            </h3>
+                            <p>
+                                <i>button > ESP > MQTT > ESP > servo motor</i>
+                            </p>
+                            <p>
+                                In both studios, the collective lunch is a stable moment of togetherness. A member starts cooking and after a while the rest hears ‘lunch is ready!’. The [lunch box] shares this moment with the other studio. This is the only device that works in both directions and requires action. When lunch is served we turn it on and a sign goes up in the other studio; until we turn it off and go back to work. When the other studio has lunch, the lunch box in our studio shows its sign.
+                            </p> 
+                            <figure class="figure">
+                                <img class="img img--landscape" src="webp/lunch-box_05.webp" alt="" onclick="openLightbox(this)" onclick="openLightbox(this)">
+                            </figure>
+                            <figure class="figure">
+                                <img class="img img--landscape" src="webp/lunch-box_06.webp" alt="" onclick="openLightbox(this)">
+                            </figure>
+                            <dl class="dl">
+                                <dt>
+                                    name 
+                                </dt>
+                                <dd>
+                                    lunch box 
+                                </dd>
+                                <dt>
+                                    presence 
+                                </dt>
+                                <dd>
+                                    the studio has their collective lunch
+                                </dd>
+                                <dt>
+                                    input 
+                                </dt>
+                                <dd>
+                                    button @ SWSWS & XP
+                                </dd>
+                                <dt>
+                                    output
+                                </dt>
+                                <dd>
+                                    ‘lunch’ sign @ SWSWS & XP
+                                </dd>
+                            </dl>
+                            <div class="extra-images">
+                                <figure class="figure figure--tiny">
+                                    <img class="img" src="webp/lunch-box_02.webp" alt="" onclick="openLightbox(this)">
+                                </figure>
+                                <figure class="figure figure--tiny">
+                                    <img class="img" src="webp/lunch-box_08.webp" alt="" onclick="openLightbox(this)">
+                                </figure>
+                                <figure class="figure figure--tiny">
+                                    <img class="img" src="webp/lunch-box_09.webp" alt="" onclick="openLightbox(this)">
+                                </figure>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="devices__item">
+                        <article>
+                            <h3>
+                                hydration celebration
+                            </h3>
+                            <p>
+                                <i>pressure sensor > ESP > MQTT > ESP > LED</i>
+                            </p>
+                            <p>
+                                Could we make connections between individual members? When wanting to get some work done, we often take a beverage to our desk. Coffee, English tea, kombucha, or just plain water. The [hybernation celebration] consists of a coaster at XP that senses whether it’s used, and an ambient lamp at SWSWS that glows up.
+                            </p>
+                            <figure class="figure">
+                                <img class="img img--landscape" src="webp/hydration-celebration_03.webp" alt="" onclick="openLightbox(this)">
+                            </figure>
+                            <figure class="figure">
+                                <img class="img img--landscape" src="webp/hydration-celebration_02.webp" alt="" onclick="openLightbox(this)">
+                            </figure>
+                            <dl class="dl">
+                                <dt>
+                                    name
+                                </dt>
+                                <dd>
+                                    hydration celebration
+                                </dd>
+                                <dt>
+                                    presence
+                                </dt>
+                                <dd>
+                                    someone has a drink at their desk
+                                </dd>
+                                <dt>
+                                    input
+                                </dt>
+                                <dd>
+                                    coaster @ XP
+                                </dd>
+                                <dt>
+                                    output
+                                </dt>
+                                <dd>
+                                    ambient lamp @ SWSWS     
+                                </dd>
+                            </dl>
+                            <div class="extra-images">
+                                <figure class="figure figure--tiny">
+                                    <img class="img" src="webp/hydration-celebration_01.webp" alt="" onclick="openLightbox(this)">
+                                </figure>
+                                <figure class="figure figure--tiny">
+                                    <img class="img" src="webp/hydration-celebration_07.webp" alt="" onclick="openLightbox(this)">
+                                </figure>
+                            </div>
+                        </article>  
+                    </li>
+                    <li class="devices__item">
+                        <article>
+                            <h3>
+                                nerd alert
+                            </h3>
+                            <p>
+                                <i>wifi > ESP > MQTT > ESP > relais > servo motor</i>
+                            </p>
+                            <p>
+                                Part of running a shared space together is developing and maintaining its online presence (see this website). Whenever someone in XP pushes an update of their website or subdomain to the shared github, the [nerd alert] flag at SWSWS makes a celebratory pirouette.
+                            </p>
+                            <figure class="figure">
+                                <img class="img img--portrait" src="webp/nerd-alert_01.webp" alt="" onclick="openLightbox(this)">
+                            </figure>
+                            <dl class="dl">
+                                <dt>
+                                    name
+                                </dt>
+                                <dd>
+                                    nerd alert
+                                </dd>
+                                <dt>
+                                    presence
+                                </dt>
+                                <dd>
+                                    they are updating their websites    
+                                </dd>
+                                <dt>
+                                    input
+                                </dt>
+                                <dd>
+                                    wifi sniffer @ XP
+                                </dd>
+                                <dt>
+                                    output
+                                </dt>
+                                <dd>
+                                    flag @ SWSWS
+                                </dd>
+                            </dl>
+                            <div class="extra-images">
+                                <figure class="figure figure--tiny">
+                                    <img class="img" src="webp/nerd-alert_02.webp" alt="" onclick="openLightbox(this)">
+                                </figure>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="devices__item">
+                        <article>
+                            <h3>
+                                coffee steam
+                            </h3>
+                            <p>
+                                <i>water sensor > ESP > MQTT > ESP LED matrix</i>
+                            </p>
+                            <p>
+                                Entering the studio in the morning to the smell of coffee feels nice, it means someone already got started and you can probably still get a cup. When the coffee is put on in the evening though, you know it’s a tough day. [Coffee steam] senses if someone fills the water reservoir of the coffee machine at SWSWS and then makes a subtle glow at XP that lasts roughly as long as the coffee is still warm.
+                            </p>
+                            <figure class="figure">
+                                <img class="img img--landscape" src="webp/coffee-steam_02.webp" alt="" onclick="openLightbox(this)">
+                            </figure>
+                            <figure class="figure">
+                                <img class="img img--landscape" src="webp/coffee-steam_06.webp" alt="" onclick="openLightbox(this)">
+                            </figure>
+                            <dl class="dl">
+                                <dt>
+                                    name
+                                </dt>
+                                <dd>
+                                    coffee stream
+                                </dd>
+                                <dt>
+                                    presence
+                                </dt>
+                                <dd>
+                                    they are making coffee
+                                </dd>
+                                <dt>
+                                    input
+                                </dt>
+                                <dd>
+                                    water sensor @ SWSWS
+                                </dd>
+                                <dt>
+                                    output
+                                </dt>
+                                <dd>
+                                    light @ XP
+                                </dd>
+                            </dl>
+                            <div class="extra-images">
+                                <figure class="figure figure--tiny">
+                                    <img class="img" src="webp/coffee-steam_01.webp" alt="" onclick="openLightbox(this)">
+                                </figure>
+                                <figure class="figure figure--tiny">
+                                    <img class="img" src="webp/coffee-steam_03.webp" alt="" onclick="openLightbox(this)">
+                                </figure>
+                                <figure class="figure figure--tiny">
+                                    <img class="img" src="webp/coffee-steam_04.webp" alt="" onclick="openLightbox(this)">
+                                </figure>
+                                <figure class="figure figure--tiny">
+                                    <img class="img" src="webp/coffee-steam_05.webp" alt="" onclick="openLightbox(this)">
+                                </figure>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="devices__item">
+                        <article>
+                            <h3>
+                                murmuring
+                            </h3>
+                            <p>
+                                <i>microphone > Pisound > internet stream > website > audio</i>
+                            </p>
+                            <p>
+                                In Oct the radio station at XP did an experiment to have a month-long live broadcast of anything happening at the studio. This created a nice way to check if someone was already in, but it also felt a bit privacy invading sometimes. The [murmuring] device turns the sound of the activity in XP into a soundscape that is broadcasted to SWSWS. The soundscape consists of ambient tones that repeat more frequently when there is more sound at the studio.
+                            </p>
+                            <figure class="figure">
+                                <img class="img img--landscape" src="webp/murmuring_01.webp" alt="" onclick="openLightbox(this)">
+                            </figure>
+                            <dl class="dl">
+                                <dt>
+                                    name
+                                </dt>
+                                <dd>
+                                    murmuring
+                                </dd>
+                                <dt>
+                                    presence
+                                </dt>
+                                <dd>
+                                    there is (sonic) activity at the other studio  
+                                </dd>
+                                <dt>
+                                    input
+                                </dt>
+                                <dd>
+                                    mic @ XP
+                                </dd>
+                                <dt>
+                                    output
+                                </dt>
+                                <dd>
+                                    soundscape @ SWSWS 
+                                </dd>
+                            </dl>
+                        </article>
+                    </li>
+                    <li class="devices__item">
+                        <article>
+                            <h3>
+                                page of the day 
+                            </h3>
+                            <p>
+                                <i>webcam > Raspberry Pi > website > Raspberry Pi > monitor</i>
+                            </p>
+                            <p>
+                                Sharing a space means we can share tools and resources like books. The [page of the day] consists of a small screen that fits on the shared library shelf, which shows a book that’s put on show in front of the webcam at the other studio. A little reminder, reference, inspiration or divination.
+                            </p>
+                            <figure class="figure">
+                                <img class="img img--landscape" src="webp/page-of-the-day_05.webp" alt="" onclick="openLightbox(this)">
+                            </figure>
+                            <figure class="figure">
+                                <img class="img img--landscape" src="webp/page-of-the-day_04.webp" alt="" onclick="openLightbox(this)">
+                            </figure>
+                            <dl class="dl">
+                                <dt>
+                                    name
+                                </dt>
+                                <dd>
+                                    page of the day
+                                </dd>
+                                <dt>
+                                    presence
+                                </dt>
+                                <dd>
+                                    what are they reading today?
+                                </dd>
+                                <dt>
+                                    input
+                                </dt>
+                                <dd>
+                                    webcam @ SWSWS & XP
+                                </dd>
+                                <dt>
+                                    output
+                                </dt>
+                                <dd>
+                                    small screen @ SWSWS & XP
+                                </dd>
+                            </dl>
+                            <div class="extra-images">
+                                <figure class="figure figure--tiny">
+                                    <img class="img" src="webp/page-of-the-day_01.webp" alt="" onclick="openLightbox(this)">
+                                </figure>
+                                <figure class="figure figure--tiny">
+                                    <img class="img" src="webp/page-of-the-day_02.webp" alt="" onclick="openLightbox(this)">
+                                </figure>
+                                <figure class="figure figure--tiny">
+                                    <img class="img" src="webp/page-of-the-day_03.webp" alt="" onclick="openLightbox(this)">
+                                </figure>
+                                <figure class="figure figure--tiny">
+                                    <img class="img" src="webp/page-of-the-day_06.webp" alt="" onclick="openLightbox(this)">
+                                </figure>
+                                <figure class="figure figure--tiny">
+                                    <img class="img" src="webp/page-of-the-day_07.webp" alt="" onclick="openLightbox(this)">
+                                </figure>
+                                <figure class="figure figure--tiny">
+                                    <img class="img" src="webp/page-of-the-day_09.webp" alt="" onclick="openLightbox(this)">
+                                </figure>
+                                <figure class="figure figure--tiny">
+                                    <img class="img" src="webp/page-of-the-day_11.webp" alt="" onclick="openLightbox(this)">
+                                </figure>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+            <section class="section" id="process">
+                <h2>
+                    Process
+                </h2>
+                <p>
+                    We developed these devices over the past couple of months:
+                </p>
+                <dl class="dl">
+                    
+                    <dt>Jul</dt>
+                    <dd>find moments and traces of togetherness</dd>
+                
+                
+                    <dt>Aug</dt>
+                    <dd>imagine possible devices & make teams</dd>
+                
+                
+                    <dt>Sep</dt>
+                    <dd> setup digital infrastructure (MQTT)</dd>
+                
+                
+                    <dt>Oct </dt>
+                    <dd>start programming and building</dd>
+                
+                
+                    <dt>Nov</dt>
+                    <dd>day at SWSWS to build devices</dd>
+                
+                
+                    <dt>Dec</dt>
+                    <dd>day at XP to finish devices</dd>
+                
+                
+                    <dt>Jan</dt>
+                    <dd>experience living/working with devices</dd>
+                
+                
+                    <dt>Feb</dt>
+                    <dd>reflect and tweak</dd>
+                    
+                </dl>
+                <p>
+                    Most devices function based on ESP modules that communicate through the MQTT protocol via a service called Shiftr (see the dashboard [here]), some are based on Raspberry Pi’s and work via websites. 
+                </p>
+                <article>
+                    <figure class="figure">
+                        <img class="img img--landscape" src="webp/shiftr_01.webp" alt="" onclick="openLightbox(this)">
+                    </figure>
+                    <div class="extra-images">
+                        <figure class="figure figure--tiny">
+                            <img class="img" src="webp/shiftr_02.webp" alt="" onclick="openLightbox(this)">
+                        </figure>
+                        <figure class="figure figure--tiny">
+                            <img class="img" src="webp/IMG_3940.webp" alt="" onclick="openLightbox(this)">
+                        </figure>
+                        <figure class="figure figure--tiny">
+                            <img class="img" src="webp/IMG_3941.webp" alt="" onclick="openLightbox(this)">
+                        </figure>
+                        <figure class="figure figure--tiny">
+                            <img class="img" src="webp/IMG_3942.webp" alt="" onclick="openLightbox(this)">
+                        </figure>
+                        <figure class="figure figure--tiny">
+                            <img class="img" src="webp/IMG_3943.webp" alt="" onclick="openLightbox(this)">
+                        </figure>
+                        <figure class="figure figure--tiny">
+                            <img class="img" src="webp/IMG_3944.webp" alt="" onclick="openLightbox(this)">
+                        </figure>
+                        <figure class="figure figure--tiny">
+                            <img class="img" src="webp/IMG_3945.webp" alt="" onclick="openLightbox(this)">
+                        </figure>
+                        <figure class="figure figure--tiny">
+                            <img class="img" src="webp/IMG_3946.webp" alt="" onclick="openLightbox(this)">
+                        </figure>
+                        <figure class="figure figure--tiny">
+                            <img class="img" src="webp/IMG_3947.webp" alt="" onclick="openLightbox(this)">
+                        </figure>
+                        <figure class="figure figure--tiny">
+                            <img class="img" src="webp/IMG_3948.webp" alt="" onclick="openLightbox(this)">
+                        </figure>
+                        <figure class="figure figure--tiny">
+                            <img class="img" src="webp/IMG_3949.webp" alt="" onclick="openLightbox(this)">
+                        </figure>
+                        <figure class="figure figure--tiny">
+                            <img class="img" src="webp/IMG_3950.webp" alt="" onclick="openLightbox(this)">
+                        </figure>
+                        <figure class="figure figure--tiny">
+                            <img class="img" src="webp/IMG_E0309.webp" alt="" onclick="openLightbox(this)">
+                        </figure>
+                        <figure class="figure figure--tiny">
+                            <img class="img" src="webp/IMG_E0310.webp" alt="" onclick="openLightbox(this)">
+                        </figure>
+                        <figure class="figure figure--tiny">
+                            <img class="img" src="webp/IMG_E0311.webp" alt="" onclick="openLightbox(this)">
+                        </figure>
+                        <figure class="figure figure--tiny">
+                            <img class="img" src="webp/IMG_E0312.webp" alt="" onclick="openLightbox(this)">
+                        </figure>
+                    </div>
+                </article>
+            </section>
+            <section class="section" id="reflections">
+                <h2>
+                    Reflections
+                </h2>
+                <p>
+                    <i>About solidarity and how to invite it through aesthetics</i>
+                </p>
+                <dl class="dl reflections__dl">
+                    <dt>
+                        daily poetics
+                    </dt>
+                    <dd>
+                        We noticed steering away from too explicit togetherness-signals to subtle gestures shared in more peripheral ways. On both sides this creates moments of honouring very mundane moments like coffee making.
+                    </dd>
+                    <dt>
+                        ghostly presence
+                    </dt>
+                    <dd>
+                        Unlike a direct signal like a webcam stream, the presence of the other was not continuously noticeable. Even – or maybe especially – when the tech wasn’t reliable yet, it invited imagining what would be happening at the other studio.
+                    </dd>
+                    <dt>
+                        inviting speculation
+                    </dt>
+                    <dd>
+                        While the signals are subtle, they are enough to start inferring things about the culture of the other studio. “They have lunch early, must be busy.” Even a more direct one like the book still leaves a lot of room: from which book is this page? why did they pick it?
+                    </dd>
+                    <dt>
+                        diy aesthetics
+                    </dt>
+                    <dd>
+                        Prototyping tech comes with a certain feel that one studiomate called Wallace & Grommit, which is to say it also feels cosy.
+                    </dd>
+                    <dt>
+                        debugging galore
+                    </dt>
+                    <dd>
+                        Making diy devices is a slow process. It required debugging along the way, from the sensor to the platform to the output.
+                    </dd>
+                </dl>
+            </section>
+            <section class="section" id="plans">
+                <h2>
+                    Plans
+                </h2>
+                <p>
+                    We’re curious how it will feel to live and work with these devices in a state where they function stably and without daily intervention. We’ll update this site with our lessons.
+                </p>
+                <p>
+                    <strong>Do you want to join the togethernet?</strong>
+                </p>
+                <p>
+                    We’re thinking of developing the network so other studios in similar situations can join to share our sense of togetherness.
+                </p>
+                <p>
+                    If we can secure funding, we’d like to further develop the devices, start pilots in other studios and develop the documentation (because it does require some technical knowledge).
+                </p>
+            </section>
+        </div>
+        <aside class="aside blurry-box">
+            <span>
+                It’s currently <span id="currentTime"></span> in Arnhem/Rotterdam. 
+            </span>
+        </aside>
+        <footer class="footer">
+            <p>
+                <i>Telepresence</i> is a collaborative experiment between <a href="https://www.swsws69.nl/" target="_blank">SWSWS69</a> (Arnhem) and <a href="https://extrapractice.space/" target="_blank">Extra Practice</a> (Rotterdam)
+            </p>
+            <p>
+                Participating members:
+            </p>
+            <ul>
+                <li>Sjef van Beers</li>
+                <li>Gijs de Boer</li>
+                <li>Eva van Boxtel</li>
+                <li>Ibo Ibelings</li>
+                <li>Sjoerd Mol</li>
+                <li>Kirsten Spruit</li>
+                <li>Emma Verhoeven</li>
+                <li>Wang Xoo</li>
+            </ul>
+            <p>
+                Supported by Stimuleringsfonds Creatieve Industrie / Creative Industries Fund NL
+            </p>
+        </footer>  
     </main>
-
+    <div id="thisLightbox" class="lightbox">
+        <div class="lightbox__content">
+          <img src="" id="lightboxImage">
+          <span class="lightbox__close">Close</span>
+          <button class="lightbox__prev" onclick="showPreviousImage()">←</button>
+          <button class="lightbox__next" onclick="showNextImage()">→</button>
+        </div>
+      </div>  
 </body>
+
+<script src="script.js"></script>
+</html>
