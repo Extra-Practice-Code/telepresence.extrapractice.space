@@ -448,4 +448,9 @@ dd {
     .reflections__dl dd {
         margin-bottom: 2rem;
     }
+    .lightbox img {
+        max-width: calc(100vw - 2rem);
+        max-height: 80%;
+        width: auto;
+    }
 }
