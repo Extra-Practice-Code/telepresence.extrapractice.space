@@ -65,12 +65,16 @@ h2 {
     top: calc(2.7rem + var(--nav-h));
 }
 
+.devices__item {
+    margin-left: 1rem;
+}
+
 h3 {
     margin: 0;
     text-transform: uppercase;
     border-left: 1px solid var(--color-main);
     padding-left: 0.5rem;
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
     position: sticky;
     top: 4.85rem;
     transition: top .4s;
@@ -439,6 +443,10 @@ dd {
 @media only screen and (max-width:600px) {
     .studios {
         flex-direction: column;
+    }
+
+    .devices__item {
+        margin-left: 0rem;
     }
 }  
 
